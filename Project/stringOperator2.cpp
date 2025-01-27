@@ -3,12 +3,14 @@
 
 using namespace std;
 
+#define MAX_ELEMENTS (5)
+
 int main() {
-    string stringhe[5];
+    string stringhe[MAX_ELEMENTS];
     int i = 0;
 
     while (true) {
-        if (i >= 5) {
+        if (i >= MAX_ELEMENTS) {
             cout << "Non posso inserire altre stringhe" << endl;
             break;
         }
