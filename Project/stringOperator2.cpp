@@ -33,17 +33,29 @@ int main() {
             }
         } else if (stringhe[i] == "+") {
             result = stoi(stringhe[i-1]) + stoi(stringhe[i-2]);
+            if (i >= 2) {
+                i = i - 2;
+            }
             stringhe[i] = to_string(result);
             i++;
         } else if (stringhe[i] == "-") {
             result = stoi(stringhe[i-1]) - stoi(stringhe[i-2]);
+            if (i >= 2) {
+                i = i - 2;
+            }
             stringhe[i] = to_string(result);
             i++;
         } else if (stringhe[i] == "*") {
             result = stoi(stringhe[i-1]) * stoi(stringhe[i-2]);
+            if (i >= 2) {
+                i = i - 2;
+            }
             stringhe[i] = to_string(result);
             i++;
         } else if (stringhe[i] == "/") {
+            if (i >= 2) {
+                i = i - 2;
+            }
             result = stoi(stringhe[i-1]) / stoi(stringhe[i-2]);
             stringhe[i] = to_string(result);
             i++;
