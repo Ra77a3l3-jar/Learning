@@ -31,7 +31,7 @@ int main() {
             } else {
                 cout << "Non c'e nulla da togliere" << endl;
             }
- /*      } else if (stringhe[i] == "+") {
+        } else if (stringhe[i] == "+") {
             result = stoi(stringhe[i-1]) + stoi(stringhe[i-2]);
             stringhe[i] = to_string(result);
             i++;
@@ -46,7 +46,7 @@ int main() {
         } else if (stringhe[i] == "/") {
             result = stoi(stringhe[i-1]) / stoi(stringhe[i-2]);
             stringhe[i] = to_string(result);
-            i++; */
+            i++;
         } else {
             i++;
         }
