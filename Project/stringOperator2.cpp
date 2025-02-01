@@ -37,6 +37,7 @@ int main() {
                 i = i - 2;
             }
             stringhe[i] = to_string(result);
+            cout << " Result is :  " << result << endl;
             i++;
         } else if (stringhe[i] == "-") {
             result = stoi(stringhe[i-1]) - stoi(stringhe[i-2]);
@@ -44,6 +45,7 @@ int main() {
                 i = i - 2;
             }
             stringhe[i] = to_string(result);
+            cout << " Result is :  " << result << endl;
             i++;
         } else if (stringhe[i] == "*") {
             result = stoi(stringhe[i-1]) * stoi(stringhe[i-2]);
@@ -51,6 +53,7 @@ int main() {
                 i = i - 2;
             }
             stringhe[i] = to_string(result);
+            cout << " Result is :  " << result << endl;
             i++;
         } else if (stringhe[i] == "/") {
             if (i >= 2) {
@@ -58,6 +61,7 @@ int main() {
             }
             result = stoi(stringhe[i-1]) / stoi(stringhe[i-2]);
             stringhe[i] = to_string(result);
+            cout << " Result is :  " << result << endl;
             i++;
         } else {
             i++;
