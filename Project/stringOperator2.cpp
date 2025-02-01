@@ -31,38 +31,24 @@ int main() {
             } else {
                 cout << "Non c'e nulla da togliere" << endl;
             }
-        } else if (stringhe[i] == "+") {
-            result = stoi(stringhe[i-1]) + stoi(stringhe[i-2]);
-            if (i >= 2) {
-                i = i - 2;
+        } else if (stringhe[i] == "+" || stringhe[i] == "-" || stringhe[i] == "*" || stringhe[i] == "/") {
+            if (i < 2) {
+                cout << "I dont have enough numebers" << endl;
+            } else {
+                if (stringhe[i] == "+") {
+                    result = stoi(stringhe[i-1]) + stoi(stringhe[i-2]);
+                } else if (stringhe[i] == "-") {
+                    result = stoi(stringhe[i-1]) - stoi(stringhe[i-2]);
+                } else if (stringhe[i] == "*") {
+                    result = stoi(stringhe[i-1]) * stoi(stringhe[i-2]);
+                } else if (stringhe[i] == "/") {
+                    result = stoi(stringhe[i-1]) / stoi(stringhe[i-2]);
+                }
+                i -= 2;
+                stringhe[i] = to_string(result);
+                cout << " Result is :  " << result << endl;
+                i++;
             }
-            stringhe[i] = to_string(result);
-            cout << " Result is :  " << result << endl;
-            i++;
-        } else if (stringhe[i] == "-") {
-            result = stoi(stringhe[i-1]) - stoi(stringhe[i-2]);
-            if (i >= 2) {
-                i = i - 2;
-            }
-            stringhe[i] = to_string(result);
-            cout << " Result is :  " << result << endl;
-            i++;
-        } else if (stringhe[i] == "*") {
-            result = stoi(stringhe[i-1]) * stoi(stringhe[i-2]);
-            if (i >= 2) {
-                i = i - 2;
-            }
-            stringhe[i] = to_string(result);
-            cout << " Result is :  " << result << endl;
-            i++;
-        } else if (stringhe[i] == "/") {
-            if (i >= 2) {
-                i = i - 2;
-            }
-            result = stoi(stringhe[i-1]) / stoi(stringhe[i-2]);
-            stringhe[i] = to_string(result);
-            cout << " Result is :  " << result << endl;
-            i++;
         } else {
             i++;
         }
