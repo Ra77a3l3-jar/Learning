@@ -12,17 +12,15 @@ int main(){
 
     Citta citta[3];
 
-    citta[0].abitanti = 1000;
-    citta[0].nome = "Andalo";
+    for (int i = 0; i < 3; i++) {
+        cout << "Inserisci la citta: ";
+        cin >> citta[i].nome;
+        cout << "Inserisci il numero di abitanti: ";
+        cin >> citta[i].abitanti;
+    }
 
-    citta[1].abitanti = 2000;
-    citta[1].nome = "Trento";
-
-    citta[2].abitanti= 6340;
-    citta[2].nome = "La Solina";
-
-    cout << "Le citta sono " << endl;
-    cout << "Citta: " << citta[0].nome << " Abitanti: " << citta[0].abitanti << endl;
-    cout << "Citta: " << citta[1].nome << " Abitanti: " << citta[1].abitanti << endl;
-    cout << "Citta: " << citta[2].nome << " Abitanti: " << citta[2].abitanti << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << "Citta: " << citta[i].nome << " - Abitanti: " << citta[i].abitanti << endl;
+    }
+return 0;
 }
