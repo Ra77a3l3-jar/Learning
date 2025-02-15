@@ -3,34 +3,52 @@
 
 using namespace std;
 
+#define MAX_ELEMENTS (100)
+
 int main() {
-    int numeri[100];
-    int i = 0; // Stack pointer
+    string stringhe[MAX_ELEMENTS];
+    int i = 0;
+
+    cout << "Type bye to exit" << endl;
 
     while (true) {
-        string input;
-        cin >> input;
-
-        if (input == "+") {
-            numeri[i - 2] = numeri[i - 2] + numeri[i - 1];
-            i--;
-        } else if (input == "-") {
-            numeri[i - 2] = numeri[i - 2] - numeri[i - 1];
-            i--;
-        } else if (input == "*") {
-            numeri[i - 2] = numeri[i - 2] * numeri[i - 1];
-            i--;
-        } else if (input == "/") {
-            numeri[i - 2] = numeri[i - 2] / numeri[i - 1];
-            i--;
-        } else if (input == ".") {
-            cout << numeri[i - 1] << endl;
-            i--;
-        } else {
-            numeri[i++] = stoi(input);
+        if (i >= MAX_ELEMENTS) {
+            break;
         }
+        cin >> stringhe[i];
         cout << "ok" << endl;
-    }
 
+        int result;
+
+        if (stringhe[i] == "bye") {
+            break;
+        }
+
+        if (stringhe[i] == "+" || stringhe[i] == "-" || stringhe[i] == "*" || stringhe[i] == "/") {
+            if (i < 2) {
+                cout << "I don't have enough numbers" << endl;
+            } else {
+                if (stringhe[i] == "+") {
+                    result = stoi(stringhe[i-1]) + stoi(stringhe[i-2]);
+                } else if (stringhe[i] == "-") {
+                    result = stoi(stringhe[i-1]) - stoi(stringhe[i-2]);
+                } else if (stringhe[i] == "*") {
+                    result = stoi(stringhe[i-1]) * stoi(stringhe[i-2]);
+                } else if (stringhe[i] == "/") {
+                    result = stoi(stringhe[i-1]) / stoi(stringhe[i-2]);
+                }
+                i -= 2;
+                stringhe[i] = to_string(result);
+            }
+        } else if (stringhe[i] == ".") {
+            if (i > 0) {
+                cout << stringhe[i-1] << endl;
+            } else {
+                cout << "No number to print" << endl;
+            }
+        } else {
+            i++;
+        }
+    }
     return 0;
 }
