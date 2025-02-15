@@ -10,16 +10,19 @@ int main(){
         string nome;
     };
 
-    Citta citta1;
-    Citta citta2;
+    Citta citta[3];
 
-    citta1.abitanti = 2000000;
-    citta1.nome = "Roma";
+    citta[0].abitanti = 1000;
+    citta[0].nome = "Andalo";
 
-    citta2.abitanti = 1600000;
-    citta2.nome = "Milano";
+    citta[1].abitanti = 2000;
+    citta[1].nome = "Trento";
 
-    cout << "La prima citta e`: " << citta1.nome << " e ha " << citta1.abitanti << " abitanti" << endl;
-    cout << "La senconda citta e`: " << citta2.nome << " e ha " << citta2.abitanti << " abitanti" << endl;
-return 0;
+    citta[2].abitanti= 6340;
+    citta[2].nome = "La Solina";
+
+    cout << "Le citta sono " << endl;
+    cout << "Citta: " << citta[0].nome << " Abitanti: " << citta[0].abitanti << endl;
+    cout << "Citta: " << citta[1].nome << " Abitanti: " << citta[1].abitanti << endl;
+    cout << "Citta: " << citta[2].nome << " Abitanti: " << citta[2].abitanti << endl;
 }
