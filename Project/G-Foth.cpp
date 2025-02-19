@@ -39,10 +39,12 @@ int main() {
                 }
                 i -= 2;
                 stringhe[i] = to_string(result);
+                i++;
             }
         } else if (stringhe[i] == ".") {
-            if (i > 0) {
+            if (i >= 1) {
                 cout << stringhe[i-1] << endl;
+                i--;
             } else {
                 cout << "No number to print" << endl;
             }
