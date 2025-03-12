@@ -18,7 +18,6 @@ int main() {
     string parola;
     cout << "inserisci una parola: " << endl;
     cin >> parola;
-    
     if (isPalindrome(parola)) {
         cout << "e palindroma" << endl;
     } else {
@@ -26,4 +25,3 @@ int main() {
     }
     return 0;
 }
- 
