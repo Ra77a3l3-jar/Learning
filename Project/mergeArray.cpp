@@ -23,9 +23,7 @@ int main() {
     int j = 0;
 
     for (k = 0; k < 8; k++) {
-        cout << "Valore i: " << i << " Valore array: " << array1[i] << " Valore j: " << j << " Valore array: " << array2[j] << " Valore k: " << k << endl;
         if ((i < 4) && (j < 4)) {
-            cout << "Caso di i e j < massimo i: " << i << " j: " << j << endl;
             if(array1[i] < array2[j]) {
                 merge[k] = array1[i];
                 i++;
@@ -33,7 +31,7 @@ int main() {
                 merge[k] = array2[j];
                 j++;
             }
-        }  else if (i <  4) {
+        } else if (i <  4) {
             cout << "Caso di i minore del massimo i: " << i << endl;
             merge[k] = array1[i];
             i++;
@@ -43,7 +41,7 @@ int main() {
             j++;
         }
     }
-
+    
     cout << "Array dopo il merge:" << endl;
     for(int i = 0; i < 8; i++) { 
         cout << merge[i] << endl;
