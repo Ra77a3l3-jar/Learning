@@ -6,7 +6,7 @@ using namespace std;
 
 int GeneraDimensione () {
     srand(time(NULL));
-    return rand()% 20;
+    return rand()% 20 + 1;
 }
 
 void RiempiArray (int array[], int dimensione) {
@@ -15,9 +15,8 @@ void RiempiArray (int array[], int dimensione) {
     }
 }
 
-int ControllOccorrenze (int array[], int dimensione)  {
+int ControllOccorrenze (int array[], int dimensione, int occorrenze[])  {
     bool processati[21] = {false};
-    int occorrenze[dimensione] = {0};
 
     for (int i = 0; i < dimensione; i++) {
         if (!processati[array[i]]) {
@@ -38,13 +37,21 @@ int main() {
 
     int dimensione = GeneraDimensione ();
 
+    int occorrenze[21] = {0};
     int array[dimensione];
 
     RiempiArray (array, dimensione);
 
     cout << "La dimensione del array e: " << dimensione << endl;
 
-    ControllOccorrenze (array, dimensione);
+    ControllOccorrenze (array, dimensione, occorrenze);
+
+    cout << "Occorrenze degli elementi:" << endl;
+    for (int i = 0; i < 21; i++) {
+        if (occorrenze[i] > 0) {
+            cout << "Valore " << i << ": " << occorrenze[i] << " occorrenze" << endl;
+        }
+    }
 
 return 0;
 }
