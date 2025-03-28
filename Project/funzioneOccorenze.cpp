@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <vector>
 
 using namespace std;
 
@@ -9,13 +10,13 @@ int GeneraDimensione () {
     return rand()% 20 + 1;
 }
 
-void RiempiArray (int array[], int dimensione) {
+void RiempiArray (vector<int>& array, int dimensione) {
     for (int i = 0; i < dimensione; i++) {
         array[i] = rand()% 21;
     }
 }
 
-int ControllOccorrenze (int array[], int dimensione, int occorrenze[])  {
+void ControllOccorrenze (const vector<int>& array, int dimensione, int occorrenze[])  {
     bool processati[21] = {false};
 
     for (int i = 0; i < dimensione; i++) {
@@ -38,7 +39,7 @@ int main() {
     int dimensione = GeneraDimensione ();
 
     int occorrenze[21] = {0};
-    int array[dimensione];
+    vector<int> array(dimensione);
 
     RiempiArray (array, dimensione);
 
