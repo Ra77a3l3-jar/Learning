@@ -1,12 +1,12 @@
 #include <iostream>
 #include <cmath>
-#include <vector> 
+#include <vector>
 #include <sciplot/sciplot.hpp>
 
 using namespace sciplot;
 using namespace std;
 
-void RichiestaDati (float* altezza, float* livello, float* areaS, float* areaV, int* interval, int* tempoSimu, float* areaValvolaInp) {
+void RichiestaDati (float *altezza, float *livello, float *areaS, float *areaV, int *interval, int *tempoSimu, float *areaValvolaInp) {
     cout << "Inserisci l'atltezza del serbatoio: " << endl;
     cin >> *altezza;
 
@@ -29,40 +29,37 @@ void RichiestaDati (float* altezza, float* livello, float* areaS, float* areaV, 
     cin >> *tempoSimu;
 }
 
-void PortataOut (float altezza, float* livello, float areaS, float areaV, int interval, int tempSimu, float* acquaOut, vector<float> &tempi, vector<float> &livelli, float portataInput) {
+void PortataOut (float altezza, float *livello, float areaS, float areaV, int interval, int tempSimu, float *acquaOut, vector<float> &tempi, vector<float> &livelli, float portataInput) {
 
     bool scarico = true;
 
     for (int i = 0; i < tempSimu; i += interval) {
 
-      if (scarico) {
-        float portata = areaV * sqrt(2 * 9.81 * (*livello));
-        float rilascio = portata * interval;
-	      float variazioneLivello = rilascio / areaS;
-        
-	      if (*livello > variazioneLivello) {
-          *livello = *livello - variazioneLivello;
-          *acquaOut += rilascio;
-	      } else {
+        if (scarico) {
+            float portata = areaV * sqrt(2 * 9.81 * (*livello));
+            float rilascio = portata * interval;
+            float variazioneLivello = rilascio / areaS;
 
-		      *acquaOut += *livello * areaS;
-          *livello = 0.0;
-          scarico = false;
+            if (*livello > variazioneLivello) {
+                *livello = *livello - variazioneLivello;
+                *acquaOut += rilascio;
+            } else {
+                *acquaOut += *livello * areaS;
+                *livello = 0.0;
+                scarico = false;
+            }
+        } else {
 
+            float Riempimento = portataInput * interval;
+            float variazioneLivello = Riempimento / areaS;
+            *livello += variazioneLivello;
+
+            if (*livello >= altezza) {
+                *livello = altezza;
+                scarico = true;
+                cout << "Il serbatoio e pieno al secondo " << i << endl;
+            }
         }
-
-      } else {
-
-        float Riempimento = portataInput * interval;
-        float variazioneLivello = Riempimento / areaS;
-        *livello += variazioneLivello;
-
-        if (*livello >= altezza) {
-            *livello = altezza;
-            scarico = true;
-            cout << "Il serbatoio e pieno al secondo " << i << endl;
-        }
-	    }
 
         cout << "Il livello del serbatoio nel secondo " << i << " e di: " << *livello << endl;
         tempi.push_back(i);
@@ -85,12 +82,12 @@ int main() {
     vector<float> livelli;
 
     RichiestaDati (&altezzaS, &livelloLiquid, &areaS, &areaV, &intervalloTemp, &tempoSimulazione, &areaValvolaInp);
-    
+
     PortataOut (altezzaS, &livelloLiquid, areaS, areaV, intervalloTemp, tempoSimulazione, &acquaOut, tempi, livelli, areaValvolaInp);
 
     cout << "Quantità di acqua uscita: " << acquaOut << " m³" << endl;
     cout << "Livello finale del serbatoio: " << livelloLiquid << " m" << endl;
-    
+
     // Create a Plot object
     Plot2D plot;
 
