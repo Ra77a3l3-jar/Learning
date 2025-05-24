@@ -1,0 +1,132 @@
+<!DOCTYPE hmtl>
+<html>
+    <head>
+        <title>Tutorial WebPage</title>
+        <link rel="icon" type="image/png" href="./images/ChampionsLeague-Logo.png">
+    </head>
+    <body>
+        <h1>This is an h1 heading</h1>
+        <h2>this is an h2 heading</h2>
+        <h3>this is an h3 heading</h3>
+        <h4>this is an h4 heading</h4>
+        <h5>this is an h5 heading </h5>
+
+        <hr> <!-- This created a line -->
+
+        <br> <!-- This is creates a space between paragraphs or headers -->
+
+        <p>this is a paragraph</p>
+        <p>
+        Some text is placed here
+        </p>
+
+        <pre>This is pre formatted text so it will be formatted not like a normal paragraph</pre>
+
+        <hr>
+
+        <a href="https://www.youtube.com/watch?v=HGTJBPNC-Gw"
+            target="_blank"
+            title="Goes to the tutorial">
+            Click me
+        </a>
+
+        <br>
+
+        <a href="Gazzetta.html">
+            Gazzetta della Champions
+        </a>
+
+        <br>
+
+        <a href="mailto:raffaelemeo@runningcode.it"
+            target="_blank">
+            Email me
+        </a>
+
+        <br>
+        <br>
+
+        <img src="./images/ChampionsLeague-Logo.png"
+        height="160">
+
+        <br> <br>
+
+        <a href="https://it.uefa.com/uefachampionsleague/"
+        target="_blank">
+            <img src="./images/ChampionsLeague-Stadium.png"
+            height="350">
+        </a>
+
+        <br> <br>
+
+        <table border="1" style="background-color:black">
+            <tr align="center" style="background-color:lightblue">
+                <th width="100">Data</th>
+                <th width="100">Fase</th>
+                <th width="100">Squadra Casa</th>
+                <th width="100">Risultato</th>
+                <th width="100">Squadra Trasferta</th>
+            </tr>
+            <tr align="center" style="background-color:aliceblue">
+                <th>15/05/2025</th>
+                <th>Finale</th>
+                <th>Real Madrid</th>
+                <th>1 - 3</th>
+                <th>Juventus</th>
+            </tr>
+        </table>
+
+        <br> <br>
+
+        <hr>
+
+        <br> <br>
+
+        <a href="https://google.com" target="_blank">
+            <button style=" font-size:50px; background-color: cyan; color: red; border-radius: 8px">Click Me</button>
+        </a>
+
+        <br> <br>
+
+        <a href="Gazzetta.html" target="_blank">
+            <button style=" font-size:50px; background-color: grey; color: orange; border-radius: 8px">La Gazzetta</button>
+        </a>
+
+        <br> <br>
+
+        <button onclick="doSomething()" style=" font-size:50px; background-color: yellow; color: orange; border-radius: 8px">Change Me</button>
+
+        <p id="greeting" style="font-size: 30px">Hello</p>
+
+        <script>
+            function doSomething() {
+                document.getElementById("greeting").innerHTML = "Goodbye";
+            }
+        </script>
+
+        <br> <br>
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            
+            <label for="username" style="font-size:20px">username:</label>
+            <input type="text" id="username" placeholder="spider-man" style="font-size:20px" minlength="8" maxlength="20" required><br>
+
+            <label for="password" style="font-size:20px">password:</label>
+            <input type="password" id="password" style="font-size:20px" placeholder="password" minlength="8" maxlength="16" required><br>
+
+            <label for="email">email:</label>
+            <input type="email" id="email" style="font-size:20px" placeholder="email@mail" required><br>
+
+            <label for="file">file:</label>
+            <input type="file" id="file" style="font-size:20px" placeholder=".txt, .png, .jpg" accept="image/png, image/jpeg, txt"><br>
+
+            <input type="submit" style="font-size:18px"><br>
+            <input type="reset" style="font-size:18px">
+
+        </form>
+
+        <br> <br>
+
+    </body>
+</html>
+

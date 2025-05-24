@@ -5,7 +5,7 @@
 using namespace std;
 using namespace sciplot;
 
-void richiestaDati (float* vGener, float* capacita, float* resistenza, float* intervalloT, int* tempoSimul) {
+void richiestaDati (float* vGener, float* capacita, float* resistenza, float* intervalloT, int* tempoSimul, float* resitenzaCondensatore) {
     cout << "Inserisci la tensione del generatore [5V]: " << endl;
     if (cin.peek() == '\n') 
     {
@@ -21,6 +21,9 @@ void richiestaDati (float* vGener, float* capacita, float* resistenza, float* in
     cout << "Inserisci la resistenza della R: " << endl;
     cin >> *resistenza;
 
+    cout << "Inserisci la resistenza del condensatore in serie al condensatore: " << endl;
+    cin >> *resitenzaCondensatore;
+
     cout << "Inserisci l'intervallo di tempo della Simulazione: " << endl;
     cin >> *intervalloT;
 
@@ -32,11 +35,12 @@ void richiestaDati (float* vGener, float* capacita, float* resistenza, float* in
     cout << "Tensione generatore [Volt]: " << *vGener << endl;
     cout << "Capacita` condensatore [Farad]: " << *capacita << endl;
     cout << "Resistenza resistore [Ohm]: " << *resistenza << endl;
+    cout << "Resistenza condensatore [Ohm]: " << *resitenzaCondensatore << endl;
     cout << "Intervallo di simulazione [Secondi]: " << *intervalloT << endl;
     cout << "Tempo di simulazione [Secondi]: " << *tempoSimul << endl;
 }
 
-void caricamento (float vGener, float capacita, float resistenza, float intervalloT, int tempoSimul, vector <float> &tempi, vector <float> &carica) {
+void caricamento (float vGener, float capacita, float resistenza, float intervalloT, int tempoSimul, vector <float> &tempi, vector <float> &carica, float resitenzaCondensatore) {
     
     float dQ = 0.0;         // delta Quantita di Carica
     float q = 0.0;          // Quantita di Carica
@@ -74,6 +78,7 @@ int main() {
     float resistenza;
     float intervalloT;
     int tempoSimul;
+    float resitenzaCondensatore;
 
     vector <float> tempi;
     vector <float> carica;

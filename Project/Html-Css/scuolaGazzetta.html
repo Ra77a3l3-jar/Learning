@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gazzetta - Champions League</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
+    body {
+      background: linear-gradient(135deg, #121212, #1e1e2d);
+      color: #e0e0e0;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+    header {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 20px;
+      background:rgba(25,25,35,0.9);
+      border-bottom:3px solid;
+      border-image:linear-gradient(90deg,#6d00ff,#00b3ff) 1;
+    }
+    header img { height:40px; }
+    header h1 {
+      font-size:24px;
+      background:linear-gradient(to right,#00b3ff,#6d00ff);
+      -webkit-background-clip:text;
+      color:transparent;
+      margin-left:10px;
+    }
+    header a.account {
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+      color:#e0e0e0;
+      font-weight:bold;
+    }
+    header a.account img { width:30px; height:30px; border-radius:50%; margin-right:8px; background:linear-gradient(to right,#00b3ff,#6d00ff); }
+
+    main {
+      flex:1;
+      display:flex;
+      padding:20px;
+      gap:20px;
+    }
+    section.content {
+      flex:2;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+    table {
+      width:90%;
+      border-collapse:collapse;
+      background:rgba(30,30,45,0.8);
+      border-radius:8px;
+      overflow:hidden;
+    }
+    th,td {
+      padding:10px;
+      text-align:centre;
+      border-bottom:1px solid #333;
+      color:#e0e0e0;
+    }
+    th {
+      background:linear-gradient(to right,#00b3ff,#6d00ff);
+      color:#fff;
+      font-weight:bold;
+    }
+    .news {
+      background:rgba(30,30,45,0.8);
+      padding:15px;
+      border-radius:8px;
+      width:90%;
+    }
+    .news h2 {
+      font-size:20px;
+      margin-bottom:10px;
+      background:linear-gradient(to right,#00b3ff,#6d00ff);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+    .news article {
+      margin-bottom:12px;
+    }
+    .news time {
+      display:block;
+      font-size:12px;
+      color:#888;
+      margin-bottom:6px;
+    }
+
+    aside.form {
+      flex:1;
+      background:rgba(30,30,45,0.8);
+      padding:15px;
+      border-radius:8px;
+      width: 90%;
+    }
+    aside.form h2 {
+      font-size:18px;
+      margin-bottom:10px;
+      background:linear-gradient(to right,#00b3ff,#6d00ff);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+    form label {
+      display:block;
+      margin-bottom:6px;
+      font-size:14px;
+    }
+    form input {
+      width:100%;
+      padding:8px;
+      margin-bottom:10px;
+      border:1px solid #444;
+      border-radius:4px;
+      background:#2a2a3a;
+      color:#e0e0e0;
+    }
+    form button {
+      width:100%;
+      padding:10px;
+      background:linear-gradient(to right,#00b3ff,#6d00ff);
+      border:none;
+      border-radius:4px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+    footer {
+      text-align:center;
+      padding:10px;
+      background:rgba(25,25,35,0.9);
+      border-top:1px solid;
+      border-image:linear-gradient(90deg,#00b3ff,#6d00ff) 1;
+      font-size:12px;
+      color:#888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="display:flex; align-items:center;">
+      <img src="./images/ChampionsLeague-Logo.png" alt="Logo">
+      <h1>Gazzetta dello Sport</h1>
+    </div>
+    <a href="#" class="account">
+      <img src="./images/ChampionsLeague-Logo.png" alt="Account">
+      <span>Accedi</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="content">
+      <table>
+        <thead>
+          <tr><th>Data</th><th>Casa</th><th>Risultato</th><th>Ospite</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>15/05/2025</td><td>Real Madrid</td><td>2-1</td><td>Man City</td></tr>
+          <tr><td>06/05/2025</td><td>Man City</td><td>3-1</td><td>Bayern</td></tr>
+          <tr><td>05/05/2025</td><td>Real Madrid</td><td>2-0</td><td>Inter</td></tr>
+          <tr><td>20/04/2025</td><td>Inter</td><td>4-3</td><td>Barcellona</td></tr>
+          <tr><td>20/04/2025</td><td>PSG</td><td>2-4</td><td>Real Madrid</td></tr>
+        </tbody>
+      </table>
+
+      <div class="news">
+        <h2>Ultime Notizie</h2>
+        <article>
+          <time>16 Maggio 2025</time>
+          <p><strong>Real Madrid vince la Champions</strong>: doppietta del capitano in finale a Wembley.</p>
+        </article>
+        <article>
+          <time>15 Maggio 2025</time>
+          <p><strong>Mbappé:</strong> "Il mio sogno è vincere con il Real".</p>
+        </article>
+        <article>
+          <time>15 Maggio 2025</time>
+          <p><strong>Flick:</strong> "Ko con l'Inter? Ho sofferto un po', ma ora siamo tutti contenti".</p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="form">
+      <h2>Area Privata</h2>
+      <img src="./images/ChampionsLeague-Stadium.png" alt="Avatar" width="350" height="200" style="display:block; margin:0 auto 10px;">
+      <form>
+        <label for="user">Nome Utente</label>
+        <input type="text" id="user" name="user" placeholder="Inserisci user" required>
+        <label for="pass">Password</label>
+        <input type="password" id="pass" name="pass" placeholder="Inserisci password" required>
+        <button type="submit">Accedi</button>
+      </form>
+    </aside>
+  </main>
+
+  <footer>
+    @ 2025 Gazzetta dello Sport – Dati aggiornati al 16 Maggio 2025
+  </footer>
+
+</body>
+</html>
