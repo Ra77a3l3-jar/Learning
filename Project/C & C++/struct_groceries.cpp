@@ -42,7 +42,11 @@ void grocerieList (product grocerie[], int size) {
 float groceriePrice (product grocerie[], int size) {
     float totPrice = 0;
     for (int i = 0; i < size; i++) {
-        totPrice = totPrice + ((grocerie[i].price * grocerie[i].quantity) || (grocerie[i].priceKg * grocerie[i].quantityKg));
+        if (grocerie[i].quantity > 0 && grocerie[i].quantityKg == 0) {
+            totPrice = totPrice + (grocerie[i].price * grocerie[i].quantity);
+        } else if (grocerie[i].quantityKg > 0 && grocerie[i].quantity == 0) {
+            totPrice = totPrice + (grocerie[i].priceKg * grocerie[i].quantityKg);
+        }
     }
     return totPrice;
 }
