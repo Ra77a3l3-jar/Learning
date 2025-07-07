@@ -7,8 +7,8 @@ struct product {
     string name;
     float price = 0;
     float priceKg = 0;
-    int quantityKg = 0;
-    int quantity = 0;
+    float quantityKg = 0;
+    float quantity = 0;
 };
 
 void grocerieList (product grocerie[], int size) {
@@ -54,23 +54,23 @@ float groceriePrice (product grocerie[], int size) {
 void list (product grocerie[], int size) {
     for (int i = 0; i < size; i++) {
         if (grocerie[i].quantity > 0 && grocerie[i].quantityKg == 0) {
-            cout << "You bought " << grocerie[i].quantity << " " << grocerie[i].name << " for " << grocerie[i].price << " $ a piece" << endl;
+            cout << "You bought " << grocerie[i].quantity << " " << grocerie[i].name << " for " << grocerie[i].price << "$ a piece" << endl;
         } else if (grocerie[i].quantityKg > 0 && grocerie[i].quantity == 0) {
-            cout << "You bought " << grocerie[i]. quantity << " Kg of " << grocerie[i]. name << " for " << grocerie[i].priceKg << " $ a Kg" << endl;
+            cout << "You bought " << grocerie[i]. quantityKg << " Kg of " << grocerie[i]. name << " for " << grocerie[i].priceKg << "$ a Kg" << endl;
         }
     }
 }
 
 int main() {
 
-    product grocerie [10];
+    product grocerie [5];
 
-    grocerieList(grocerie, 10);
-    float totPrice = groceriePrice(grocerie, 10);
+    grocerieList(grocerie, 5);
+    float totPrice = groceriePrice(grocerie, 5);
 
     cout << "The total cost of the groceries is " << totPrice << " $" << endl << endl;
 
-    list(grocerie, 10);
+    list(grocerie, 5);
 
     return 0;
 }
